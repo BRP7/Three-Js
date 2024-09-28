@@ -11,3 +11,10 @@ camera.position.z = 5;
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
+
+function animate() {
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+	renderer.render( scene, camera );
+}
+renderer.setAnimationLoop( animate );
