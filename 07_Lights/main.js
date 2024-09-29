@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GUI } from 'lil-gui'; // Import lil-gui
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -30,18 +31,40 @@ const directionalLight = new THREE.DirectionalLight( 0xffffff, 1 ); // Bright wh
 directionalLight.position.set(5, 5, 5); // Position the light
 scene.add( directionalLight );
 
-// Add a helper for the directional light
 const directionalLightHelper = new THREE.DirectionalLightHelper( directionalLight, 1 ); // Size of the helper
 scene.add( directionalLightHelper );
 
-// // Add a point light for dynamic lighting
+// Add a point light for dynamic lighting
 const pointLight = new THREE.PointLight( 0xff0000, 1, 100 ); // Red light
-pointLight.position.set(1, 2, -3); // Position the light
+pointLight.position.set(0, 0, 1.2); // Position the light
 scene.add( pointLight );
 
-// Add a helper for the point light
-const pointLightHelper = new THREE.PointLightHelper( pointLight, 1 ); // Size of the helper
+const pointLightHelper = new THREE.PointLightHelper( pointLight, 0.2 ); // Size of the helper
 scene.add( pointLightHelper );
+
+// Set up the GUI
+const gui = new GUI();
+
+// Ambient light controls
+const ambientFolder = gui.addFolder('Ambient Light');
+ambientFolder.add(ambientLight, 'intensity', 0, 1).name('Intensity');
+ambientFolder.close();
+
+// Directional light controls
+const directionalFolder = gui.addFolder('Directional Light');
+directionalFolder.add(directionalLight, 'intensity', 0, 2).name('Intensity');
+directionalFolder.add(directionalLight.position, 'x', -10, 10).name('Position X');
+directionalFolder.add(directionalLight.position, 'y', -10, 10).name('Position Y');
+directionalFolder.add(directionalLight.position, 'z', -10, 10).name('Position Z');
+directionalFolder.close();
+
+// Point light controls
+const pointFolder = gui.addFolder('Point Light');
+pointFolder.add(pointLight, 'intensity', 0, 2).name('Intensity');
+pointFolder.add(pointLight.position, 'x', -10, 10).name('Position X');
+pointFolder.add(pointLight.position, 'y', 0, 10).name('Position Y');
+pointFolder.add(pointLight.position, 'z', -10, 10).name('Position Z');
+pointFolder.close();
 
 camera.position.z = 5;
 
