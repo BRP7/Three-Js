@@ -1,3 +1,11 @@
+/* 
+| Axis | Positive Value | Negative Value |
+|------|----------------|----------------|
+| X    | Right          | Left           |
+| Y    | Up             | Down           |
+| Z    | Forward        | Backward       |
+
+*/
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -27,10 +35,4 @@ window.addEventListener("resize",()=>{
     camera.updateProjectionMatrix();
 })
 
-// function animate() {
-//     window.requestAnimationFrame(animate)
-// 	renderer.render( scene, camera );
-//     cube.rotation.x += 0.01;
-//     cube.rotation.y += 0.01;
-// }
-// animate();
+
