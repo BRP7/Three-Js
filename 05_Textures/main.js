@@ -8,11 +8,12 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const textureLoader = new THREE.TextureLoader();
 const color = textureLoader.load('./text/color.png');
 const roughness = textureLoader.load('./text/roughness.pang');
+const normal = textureLoader.load('./text/normal.pang');
 
 // Cube geometry and textured material
 const geometry = new THREE.BoxGeometry( 1.5, 1, 1 );
 // const material = new THREE.MeshStandardMaterial( {   map: texture, roughness: 0.8, metalness: 0.3  } );
-const material = new THREE.MeshStandardMaterial( {   map: color, roughnessMap: roughness, metalness: 0.3  } );
+const material = new THREE.MeshStandardMaterial( {   map: color, roughnessMap: roughness, metalness: 0.3 ,normalMap : normal } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
