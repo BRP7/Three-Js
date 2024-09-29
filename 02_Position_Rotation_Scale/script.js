@@ -21,6 +21,17 @@ cube.position.x = -2;//the last position set on an axis will take effect.
 cube.position.y = 1;
 cube.position.y = -1;
 cube.position.z = 1;
+
+cube.rotation.x= 1;
+cube.rotation.y= 2;
+cube.rotation.y= Math.PI;//180 degree
+cube.rotation.y= Math.PI*2;
+cube.rotation.z= -3;
+
+cube.scale.x= -1.1;
+cube.scale.y= 2.2;
+cube.scale.z= 4;
+
 scene.add( cube );
 
 
