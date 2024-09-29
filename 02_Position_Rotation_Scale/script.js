@@ -8,7 +8,7 @@ const box = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( box, material );
 
-scene.position.x = 1;
+cube.position.x = 2;//If the camera is at `z = 5` and the cube is at `x = 10`, the cube won't be visible because it's outside the camera's frustum.
 // scene.position.x = -2;
 // scene.position.y = 1;
 // scene.position.y = -1;
@@ -18,7 +18,7 @@ scene.add( cube );
 let canvas = document.querySelector('#draw');
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+renderer.render(scene,camera);
 
 window.addEventListener("resize",()=>{
     renderer.setSize(window.innerWidth,window.innerHeight);
