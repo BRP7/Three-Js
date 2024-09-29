@@ -26,6 +26,7 @@ controls.enableDamping = true;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 12 ;
 controls.enableZoom = false;
+controls.dampingFactor = 0.5;//small DF -> time to stop ⬆️
 
 function animate() {
     requestAnimationFrame( animate );
