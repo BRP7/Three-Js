@@ -13,6 +13,12 @@ const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+window.addEventListener("resize",()=>{
+    renderer.setSize(window.innerWidth,window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+})
+
 function animate() {
     window.requestAnimationFrame(animate)
 	renderer.render( scene, camera );
