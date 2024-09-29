@@ -6,8 +6,10 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 
 // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 // const geometry = new THREE.SphereGeometry( 1, 10, 10 );
-const geometry = new THREE.SphereGeometry( 1, 5, 5 ,2,1.2);
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 , wireframe : true } );
+// const geometry = new THREE.SphereGeometry( 1, 5, 5 ,2,1.2);
+const geometry = new THREE.CylinderGeometry( 2, 2, 2 ,10,10,true);
+// const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 , wireframe : true } );
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 , side: THREE.DoubleSide } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
@@ -25,7 +27,7 @@ window.addEventListener('resize',()=>{
 })
 const controls = new OrbitControls(camera,renderer.domElement);
 controls.enableDamping = true;
-controls.autoRotate = true;
+// controls.autoRotate = true;
 controls.autoRotateSpeed = 12 ;
 controls.enableZoom = false;
 controls.dampingFactor = 0.5;//small DF -> time to stop ⬆️
@@ -33,8 +35,8 @@ controls.dampingFactor = 0.5;//small DF -> time to stop ⬆️
 function animate() {
     requestAnimationFrame( animate );
 	renderer.render( scene, camera );
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    // cube.rotation.x += 0.01;
+    // cube.rotation.y += 0.01;
     controls.update();
 }
 
