@@ -7,8 +7,8 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 // Load texture
 const textureLoader = new THREE.TextureLoader();
 const color = textureLoader.load('./text/color.png');
-const roughness = textureLoader.load('./text/roughness.pang');
-const normal = textureLoader.load('./text/normal.pang');
+const roughness = textureLoader.load('./text/roughness.png');
+const normal = textureLoader.load('./text/normal.png');
 
 // Cube geometry and textured material
 const geometry = new THREE.BoxGeometry( 1.5, 1, 1 );
