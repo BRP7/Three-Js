@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GUI } from 'lil-gui';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; // Import GLTFLoader
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -40,6 +41,16 @@ scene.add( directionalLight );
 const pointLight = new THREE.PointLight( 0xffffff, 1, 100 ); // White light
 pointLight.position.set(0, 2, 0); // Position the light
 scene.add( pointLight );
+
+// Load HDR environment map using RGBILoader
+const rgbiLoader = new RGBELoader();
+rgbiLoader.load('./billiard_hall_1k.hdr', (texture) => {
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.environment = texture; // Set as the scene environment
+});
+
+
+
 
 // Add a helper for the point light
 // const pointLightHelper = new THREE.PointLightHelper( pointLight, 1 );
