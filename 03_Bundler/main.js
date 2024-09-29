@@ -21,7 +21,11 @@ window.addEventListener('resize',()=>{
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 })
-const controls = new OrbitControls(camera,renderer.domElement)
+const controls = new OrbitControls(camera,renderer.domElement);
+controls.enableDamping = true;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 12 ;
+controls.enableZoom = false;
 
 function animate() {
     requestAnimationFrame( animate );
