@@ -47,6 +47,7 @@ const rgbiLoader = new RGBELoader();
 rgbiLoader.load('./billiard_hall_1k.hdr', (texture) => {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.environment = texture; // Set as the scene environment
+    scene.background = texture; // Set as the scene background
 });
 
 
