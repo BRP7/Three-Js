@@ -39,7 +39,7 @@ scene.add( directionalLight );
 
 // Add point light for dynamic lighting
 const pointLight = new THREE.PointLight( 0xffffff, 1, 100 ); // White light
-pointLight.position.set(0, 3, 0); // Position the light
+pointLight.position.set(0, 2, 0); // Position the light
 scene.add( pointLight );
 
 // Load HDR environment map using RGBILoader
