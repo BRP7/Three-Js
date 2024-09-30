@@ -35,9 +35,12 @@ const directionalLightHelper = new THREE.DirectionalLightHelper( directionalLigh
 scene.add( directionalLightHelper );
 
 // Add a point light for dynamic lighting
-const pointLight = new THREE.PointLight( 0xff0000, 1, 100 ); // Red light
+const pointLight = new THREE.PointLight( 0xff0000, 1, 100 ); // Red light 
 pointLight.position.set(0, 0, 1.2); // Position the light
 scene.add( pointLight );
+// Color: Light's color (e.g., 0xffffff for white).
+// Intensity: Brightness of the light.
+// Distance: How far the light affects (e.g., 100 means effective up to 100 units). Beyond that, it has no effect.
 
 const pointLightHelper = new THREE.PointLightHelper( pointLight, 0.2 ); // Size of the helper
 scene.add( pointLightHelper );

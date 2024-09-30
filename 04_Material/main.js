@@ -24,8 +24,10 @@ const directionalLightHelper1 = new THREE.DirectionalLightHelper( directionalLig
 scene.add( directionalLightHelper1 );
 
 // Add the second directional light (artificial light)
-const directionalLight2 = new THREE.DirectionalLight( 0xff0000, 0.5 ); // red light for contrast
-directionalLight2.position.set(-5, -5, -5); // position the light
+// const directionalLight2 = new THREE.DirectionalLight( 0xff0000, 0.5 ); // red light for contrast
+// directionalLight2.position.set(-5, -5, -5); // position the light/
+const directionalLight2 = new THREE.DirectionalLight( 0xff0000, 3 ); // red light for contrast
+directionalLight2.position.set(5, 2, 35); // position the light
 scene.add( directionalLight2 );
 
 // Add a helper for the second directional light
