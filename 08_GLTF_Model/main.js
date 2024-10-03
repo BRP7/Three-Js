@@ -7,7 +7,7 @@ import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-Load texture
+// Load texture
 // const textureLoader = new THREE.TextureLoader();
 // const color = textureLoader.load('./text/color.png');
 // const roughness = textureLoader.load('./text/roughness.png');
